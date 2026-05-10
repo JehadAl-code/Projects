@@ -86,7 +86,7 @@ public:
         while (history) { Log* t = history; history = history->next; delete t; }
     }
 
-    // Read data from file [Requirement: Read from file]
+    // Read data from file 
     void loadPatients() {
         ifstream in("patients.txt");
         if (!in) return;
@@ -144,7 +144,7 @@ public:
         if (!triage.empty()) heapDown(0);
     }
 
-    // Save data [Requirement: Write to file]
+    // Save data 
     void saveAndExit() {
         ofstream out("patients.txt");
         for (auto p : triage) out << p->id << " " << p->urgency << " " << p->name << endl;
